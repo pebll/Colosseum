@@ -1,5 +1,11 @@
-package Objects;
+package io.colosseum.objects;
 
+/**
+ * Describes a Race
+ *
+ * @author leo
+ * @version 1.0
+ */
 public class Race {
     private String name;
     private int baseHealth;
