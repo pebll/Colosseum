@@ -13,6 +13,8 @@ import java.util.Random;
  * @version 1.0
  */
 public class Character {
+
+    private String name;
     private Race race;
     // main stats
     private int maxHealth;
@@ -25,7 +27,7 @@ public class Character {
      *
      * @param race The race the character should be
      */
-    public Character(Race race) {
+    public Character(String name, Race race) {
         this.race = race;
         this.maxHealth = race.getHealth();
         this.strength = race.getStrength();
@@ -36,9 +38,14 @@ public class Character {
     /**
      * Constructor for a new character with a random race
      */
+    public Character(String name) {
+        Race race = RACES.RACES[new Random().nextInt(RACES.RACES.length)];
+        new Character(name, race);
+    }
+
     public Character() {
         Race race = RACES.RACES[new Random().nextInt(RACES.RACES.length)];
-        new Character(race);
+        new Character("defaultCharacter", race);
     }
 
     /**
@@ -61,4 +68,8 @@ public class Character {
         strength = stats[1];
         defense = stats[2];
     }
+    public String getName() {
+        return name;
+    }
+
 }

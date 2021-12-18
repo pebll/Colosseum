@@ -11,26 +11,12 @@ import io.colosseum.objects.Character;
  * @version 1.0
  */
 public class Game {
-    private Character character1;
-    private Character character2;
+    private Arena arena;
 
-    /**
-     * Constructor for an arena with given Characters
-     *
-     * @param character1 The first fighter
-     * @param character2 The second fighter
-     */
-    public Game(Character character1, Character character2) {
-        this.character1 = character1;
-        this.character2 = character2;
-    }
+    public Game(){}
 
-    /**
-     * Constructor for an arena with no given Characters.
-     * Two new Characters are initialized
-     */
-    public Game() {
-        new Game(new Character(), new Character());
 
+    public void initialize() {
+        arena = new Arena();
     }
 }
